@@ -53,9 +53,10 @@ languages.each do |key, value| # key = :oo, :functional ; value = {hash with key
 
     if new_lang[key2].nil?
       new_lang[key2] = {}
-      new_lang[key2][:style] = key
+      new_lang[key2][:style] = []
     end
-
+    
+    new_lang[key2][:style] << key
     value.each_value do |value2|
       value2.each do |key3, value3|
         new_lang[key2][key3] = value3
@@ -65,6 +66,21 @@ languages.each do |key, value| # key = :oo, :functional ; value = {hash with key
     
   end
 
-
+ 
 end
+
+#second implementation. Javascript does not have TWO Types in the code below. Fail.
+
+# new_hash = {}
+# languages.each do |style, lang_hash|
+#   lang_hash.each do |lang, type|
+#     new_hash[lang] = type
+#     new_hash[lang][:style] = []
+#     new_hash[lang][:style] << style
+#   end
+# end
+
+
+
+
 puts "new_lang is #{new_lang}"
