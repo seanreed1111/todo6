@@ -22,7 +22,7 @@ end
 class Array
   def maximum
   	max = self[0]
-	self.each do |item| 
+	self.each do |item|
 		if item > max
 			max = item
 		end
